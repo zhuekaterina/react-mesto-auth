@@ -1,0 +1,19 @@
+.popup-card__field {
+    margin: 0px auto;
+    width: 358px;
+    min-height: 27px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+}
+
+@media screen and (max-width: 910px) {
+    .popup-card__field {
+        font-size: 10px;
+        max-width: 200px;
+    }
+}

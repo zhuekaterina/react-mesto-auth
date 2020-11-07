@@ -1,0 +1,15 @@
+.popup-removal__form {
+    display: flex;
+    flex-direction: column;
+    width: 430px;
+    min-height: 181px;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+@media screen and (max-width: 910px) {
+    .popup-removal__form {
+        width: 252px;
+        min-height: 96px;
+    }
+}

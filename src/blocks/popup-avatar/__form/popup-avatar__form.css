@@ -1,0 +1,15 @@
+.popup-avatar__form {
+    display: flex;
+    flex-direction: column;
+    width: 430px;
+    min-height: 272px;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+@media screen and (max-width: 910px) {
+    .popup-avatar__form {
+        width: 240px;
+        min-height: 200px;
+    }
+}

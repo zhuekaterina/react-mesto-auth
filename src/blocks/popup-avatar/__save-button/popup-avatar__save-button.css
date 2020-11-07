@@ -1,0 +1,30 @@
+.popup-avatar__save-button {
+    margin: 14px auto 0px auto;
+    width: 358px;
+    height: 50px;
+    background-color: black;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.popup-avatar__save-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transition: 0.5s linear;
+}
+
+@media screen and (max-width: 910px) {
+    .popup-avatar__save-button {
+        margin-top: 0px;
+        width: 200px;
+        height: 40px;
+        font-size: 13px;
+    }
+}
