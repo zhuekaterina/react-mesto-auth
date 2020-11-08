@@ -8,4 +8,4 @@
 JS, React, React Hooks, DOM, HTML, CSS, Webpack, Babel, grid-layout, flexbox, адаптивная верстка, Git.
 
 ### Ссылка на проект:
-
+https://zhuekaterina.github.io/mesto-react/
