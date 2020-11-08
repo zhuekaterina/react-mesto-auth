@@ -92,6 +92,7 @@ function App() {
         isOpen={isEditProfilePopupOpen}
         title="Редактировать профиль"
         onClose={closeAllPopups}
+        buttonText="Сохранить"
         >
           <input placeholder="Имя пользователя" name="name" id="user-name" className="popup__input popup-user__field" type="text" required minLength="2" maxLength="40" />
           <span className="popup__error" id="user-name-error"></span>
@@ -103,6 +104,7 @@ function App() {
         isOpen={isAddPlacePopupOpen}
         title="Новое место"
         onClose={closeAllPopups}
+        buttonText="Создать"
         >
           <input placeholder="Название" name="name" id="card-name" className="popup__input popup-card__field" type="text" required minLength="1" maxLength="30" />
           <span className="popup__error" id="card-name-error"></span>
@@ -114,6 +116,7 @@ function App() {
         isOpen={isEditAvatarPopupOpen}
         title="Обновить аватар"
         onClose={closeAllPopups}
+        buttonText="Сохранить"
         >
           <input placeholder="Ссылка на картинку" name="avatar" id="avatar-link" className="popup__input popup-avatar__field" required type="url" />
           <span className="popup__error" id="avatar-link-error"></span>
@@ -123,6 +126,7 @@ function App() {
         isOpen={isRemovalPopupOpen}
         title="Вы уверены?"
         onClose={closeAllPopups}
+        buttonText="Да"
         />
         <ImagePopup 
         isOpen={isImagePopupOpen}
