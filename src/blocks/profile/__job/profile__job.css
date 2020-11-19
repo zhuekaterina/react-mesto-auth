@@ -1,6 +1,7 @@
 .profile__job {
     margin: 16px 0px 16px 0px;
     max-width: 318px;
+    min-width: 318px;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;

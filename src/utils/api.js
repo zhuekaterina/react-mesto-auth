@@ -62,22 +62,6 @@ class Api {
         })
         .then(res => this.getResStatus(res));
     }
-
-    addLike(cardId) {
-        return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
-            method: 'PUT',
-            headers: this._headers
-        })
-        .then(res => this.getResStatus(res));
-    }
-
-    deleteLike(cardId) {
-        return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
-            method: 'DELETE',
-            headers: this._headers
-        })
-        .then(res => this.getResStatus(res));
-    }
     
     editAvatar({avatar}) {
         return fetch(`${this._baseUrl}/users/me/avatar`, {
@@ -86,6 +70,14 @@ class Api {
             body: JSON.stringify({
               avatar: `${avatar}`
             })
+        })
+        .then(res => this.getResStatus(res));
+    }
+    
+    changeLikeCardStatus(id, isLiked) {
+        return fetch(`${this._baseUrl}/cards/likes/${id}`, {
+            method: `${isLiked ? 'PUT' : 'DELETE'}`,
+            headers: this._headers
         })
         .then(res => this.getResStatus(res));
     }
