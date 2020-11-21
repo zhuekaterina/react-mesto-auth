@@ -6,7 +6,7 @@ class Api {
         this._headers = headers;
     }
 
-    getResStatus(res) {
+    _getResStatus(res) {
         if (res.ok) {
             return res.json();
           }
@@ -17,14 +17,14 @@ class Api {
         return fetch(`${this._baseUrl}/users/me`, {
             headers: this._headers
         })
-        .then(res => this.getResStatus(res));
+        .then(res => this._getResStatus(res));
     }
 
     getInitialCards() {
         return fetch(`${this._baseUrl}/cards`, {
             headers: this._headers
         })
-        .then(res => this.getResStatus(res));
+        .then(res => this._getResStatus(res));
     }
 
     getAppInfo() {
@@ -40,7 +40,7 @@ class Api {
               about: `${about}`
             })
         })
-        .then(res => this.getResStatus(res));
+        .then(res => this._getResStatus(res));
     }
 
     addNewCard({name, link}) {
@@ -52,7 +52,7 @@ class Api {
                 name: `${name}`
             })
         })
-        .then(res => this.getResStatus(res));
+        .then(res => this._getResStatus(res));
     }
 
     deleteCard(cardId) {
@@ -60,7 +60,7 @@ class Api {
             method: 'DELETE',
             headers: this._headers
         })
-        .then(res => this.getResStatus(res));
+        .then(res => this._getResStatus(res));
     }
     
     editAvatar({avatar}) {
@@ -71,7 +71,7 @@ class Api {
               avatar: `${avatar}`
             })
         })
-        .then(res => this.getResStatus(res));
+        .then(res => this._getResStatus(res));
     }
     
     changeLikeCardStatus(id, isLiked) {
@@ -79,7 +79,7 @@ class Api {
             method: `${isLiked ? 'PUT' : 'DELETE'}`,
             headers: this._headers
         })
-        .then(res => this.getResStatus(res));
+        .then(res => this._getResStatus(res));
     }
 }
 

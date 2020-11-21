@@ -23,26 +23,15 @@ function App() {
   const [cardToDelete, setCardToDelete] = React.useState(null);
 
    React.useEffect(() => {
-    api
-    .getUserInfo()
-    .then((info) => {
-      setCurrentUser(info)
-    })
-    .catch((err) => {
+     Promise.all([api.getUserInfo(), api.getInitialCards()])
+     .then(([info, cards]) => {
+      setCurrentUser(info);
+      setCards(cards);
+     })
+     .catch((err) => {
       console.log(err);
     });
   }, []);
-
-  React.useEffect(() => {
-    api
-    .getInitialCards()
-    .then((cards) => {
-      setCards(cards)
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-  }, [])
 
   function handleCardClick(card) {
     setImagePopupOpen(true);
@@ -90,41 +79,49 @@ function App() {
   function handleCardDelete() {
     api
     .deleteCard(cardToDelete._id)
-    .then(() => setCards(cards.filter((card) => card !== cardToDelete)))
+    .then(() => {
+      setCards(cards.filter((card) => card !== cardToDelete));
+      closeAllPopups();
+    })
     .catch((err) => {
       console.log(err);
     });
-    closeAllPopups();
   }
 
   function handleUpdateUser(userInfo) {
     api
     .editUserInfo(userInfo)
-    .then((newUserInfo) => setCurrentUser(newUserInfo))
+    .then((newUserInfo) => {
+      setCurrentUser(newUserInfo);
+      closeAllPopups();
+    })
     .catch((err) => {
       console.log(err);
     });
-    closeAllPopups();
   }
 
   function handleUpdateAvatar(avatar) {
     api
     .editAvatar(avatar)
-    .then((newAvatar) => setCurrentUser(newAvatar))
+    .then((newAvatar) => {
+      setCurrentUser(newAvatar);
+      closeAllPopups();
+    })
     .catch((err) => {
       console.log(err);
     });
-    closeAllPopups();
   }
 
   function handleAddPlaceSubmit(newCard) {
     api
     .addNewCard(newCard) 
-    .then((newCardData) => setCards([newCardData, ...cards]))
+    .then((newCardData) => {
+      setCards([newCardData, ...cards]);
+      closeAllPopups();
+    })
     .catch((err) => {
       console.log(err);
     });
-    closeAllPopups();
   }
  
   return (
