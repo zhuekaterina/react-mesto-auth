@@ -10,3 +10,4 @@
 JS, React, React Hooks, HTML, CSS, Babel, grid-layout, flexbox, адаптивная верстка, Git.
 
 ### Ссылка на проект:
+https://zhuekaterina.github.io/react-mesto-auth/
