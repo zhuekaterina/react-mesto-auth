@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter basename="/">
+    <HashRouter basename="/react-mesto-auth/">
       <App/>
     </HashRouter>
   </React.StrictMode>,
