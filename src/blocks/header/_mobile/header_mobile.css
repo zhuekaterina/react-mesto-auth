@@ -1,0 +1,5 @@
+.header_mobile {
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-top: 0px;
+}

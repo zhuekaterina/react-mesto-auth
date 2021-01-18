@@ -1,4 +1,6 @@
 .header {
+    display: flex;
+    justify-content: space-between;
     padding-top: 45px;
     max-width: 882px;
     border-bottom: 1px solid rgba(84,84,84,0.7);
@@ -8,5 +10,6 @@
 @media screen and (max-width: 882px) {
     .header {
         width: 100%;
+        padding-top: 28px;
     }
 }

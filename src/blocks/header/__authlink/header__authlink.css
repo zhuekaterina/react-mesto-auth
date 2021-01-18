@@ -1,0 +1,25 @@
+.header__authlink {
+    margin-top: 6px;
+    min-width: 53px;
+    max-height: 22px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+
+.header__authlink:hover {
+    opacity: 0.7;
+    transition: 0.5s linear;
+}
+
+@media screen and (max-width: 910px) {
+    .header__authlink {
+        margin: 8px 30px 0px 0px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}

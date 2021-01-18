@@ -81,6 +81,7 @@ class Api {
         })
         .then(res => this._getResStatus(res));
     }
+
 }
 
 export const api = new Api(apiInfo);
