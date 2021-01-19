@@ -10,10 +10,10 @@ function Register({onRegister}) {
 
     return(
         <AuthForm 
-        onSubmit={handleSubmit}
-        name='register'
-        title="Регистрация"
-        buttonText="Зарегистрироваться">
+            onSubmit={handleSubmit}
+            name='register'
+            title="Регистрация"
+            buttonText="Зарегистрироваться">
             <Link className="authform__link" to="/signin">Уже зарегистрированы? Войти</Link>
         </AuthForm>
     )

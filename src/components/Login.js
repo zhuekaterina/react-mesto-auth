@@ -9,10 +9,10 @@ function Login({onLogin}) {
 
     return(
         <AuthForm 
-        onSubmit={handleSubmit}
-        name='login'
-        title="Вход"
-        buttonText="Войти"/>
+            onSubmit={handleSubmit}
+            name='login'
+            title="Вход"
+            buttonText="Войти"/>
     )
 }
 
