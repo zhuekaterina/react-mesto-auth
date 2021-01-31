@@ -52,7 +52,7 @@ function App() {
         .catch((err) => console.log(err));
   }}, [loggedIn, history]);
 
-   React.useEffect(() => {
+   React.useEffect((res) => {
      Promise.all([api.getUserInfo(), api.getInitialCards()])
      .then(([info, cards]) => {
       setCurrentUser(info);
@@ -84,11 +84,13 @@ function App() {
 
   function handleRegister(email, password) {
     auth.register(email, password) 
-      .then(() => {
-        setTooltipImage(success);
-        setTooltipText('Вы успешно зарегистрировались!');
-        history.push('/signin');
-        setInfoTooltipOpen(true);
+      .then((res) => {
+        if (res.status !== 400) {
+          setTooltipImage(success);
+          setTooltipText('Вы успешно зарегистрировались!');
+          history.push('/signin');
+          setInfoTooltipOpen(true);
+        }
       })
       .catch((err) => {
         setTooltipImage(fail);
