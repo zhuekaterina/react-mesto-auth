@@ -84,13 +84,11 @@ function App() {
 
   function handleRegister(email, password) {
     auth.register(email, password) 
-      .then((res) => {
-        if (res.status !== 400) {
+      .then(() => {
           setTooltipImage(success);
           setTooltipText('Вы успешно зарегистрировались!');
           history.push('/signin');
           setInfoTooltipOpen(true);
-        }
       })
       .catch((err) => {
         setTooltipImage(fail);
