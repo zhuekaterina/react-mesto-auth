@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://api.zhuekaterina.students.nomoredomains.rocks'; 
+export const BASE_URL = 'https://auth.nomoreparties.co';
 
 export const register = (email, password) => {
     return fetch(`${BASE_URL}/signup`, {
@@ -28,8 +28,7 @@ export const authorize = (email, password) => {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json'
-      },
-      credentials: 'include',      
+      }, 
       body: JSON.stringify({email, password}),    
     })
     .then((res) => {
